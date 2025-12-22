@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "tailwindcss";
+
+@theme{
+    --color-light-background: #caa8e0;
+    --color-light-header:#a777c7;
+    --color-light-text: #000000;
+    --color-light-button: #007bff;
+    --color-light-button-text: #ffffff;
+
+    --color-dark-background: #1e072e;
+    --color-dark-header: #160521;
+    --color-dark-text: #ffffff;
+    --color-dark-button: #1e88e5;
+    --color-dark-button-text: #ffffff;
+}
+
+.icon {
+      animation: dropBounce 1.8s ease-out forwards;
+    }
+
+@keyframes dropBounce {
+      0% {
+        transform: translateY(-100vh); /* Starts off-screen from top */
+        opacity: 0;
+      }
+      60% {
+        transform: translateY(0); /* Hits "ground" */
+        opacity: 1;
+      }
+      70% {
+        transform: translateY(-80px); /* First bounce up */
+      }
+      80% {
+        transform: translateY(0);
+      }
+      88% {
+        transform: translateY(-40px); /* Smaller bounce */
+      }
+      94% {
+        transform: translateY(0);
+      }
+      98% {
+        transform: translateY(-15px); /* Even smaller */
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
