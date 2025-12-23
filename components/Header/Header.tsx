@@ -1,6 +1,5 @@
 import { Link, usePathname } from "expo-router";
-import { MenuIcon } from "lucide-react-native";
-import React, { useState } from "react";
+import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import useTheme from "../../hooks/useTheme/useTheme";
@@ -13,24 +12,24 @@ export default function Header() {
     const pathname = usePathname();
     const isActive = (route: string) => pathname === route;
 
-    const [isVisible, setIsVisible] = useState(true);
+    // const [isVisible, setIsVisible] = useState(true);
 
-    const toggleVisibility = () => {
-        setIsVisible(prev => !prev);
-    }
+    // const toggleVisibility = () => {
+    //     setIsVisible(prev => !prev);
+    // }
 
-    let color_changer = dark ? Colors.logo_light : Colors.logo_dark;
+    // let color_changer = dark ? Colors.logo_light : Colors.logo_dark;
     let image_holder = dark ? require('../../assets/images/cartify-icon-light.png') : require('../../assets/images/cartify-icon-dark.png');
 
     return (
         <View className={`w-full h-[120px]
         relative top-0
         flex flex-row justify-between items-center
-        px-8 shadow-md shadow-gray-500 z-20`}
-        style={{
-            paddingTop: top, backgroundColor: dark ? Colors.dark_header : Colors.light_header,
-            boxShadow: dark ? '0 0 5px rgba(255,255,255,0.1)' : '0 0 5px rgba(0,0,0,0.1)'
-        }}
+        px-8 z-20`}
+            style={{
+                paddingTop: top, backgroundColor: dark ? Colors.dark_header : Colors.light_header,
+                // boxShadow: dark ? '0 0 5px rgba(255,255,255,0.1)' : '0 0 5px rgba(0,0,0,0.1)'
+            }}
         >
             <View className="flex flex-row gap-3 justify-center items-center">
                 <Image
@@ -44,26 +43,26 @@ export default function Header() {
 
             <View className="flex flex-row gap-10 justify-center items-center">
                 <ThemeToggleButton />
-                <TouchableOpacity className="w-fit h-fit mb-2" onPress={toggleVisibility}>
+                {/* <TouchableOpacity className="w-fit h-fit mb-2" onPress={toggleVisibility}>
                     <MenuIcon color={color_changer} size={32} />
-                </TouchableOpacity>
+                </TouchableOpacity> */}
             </View>
 
             <View className={`w-screen h-20 overflow-hidden
-            flex-row gap-2 px-4 pb-1 justify-center items-center
+            flex-row gap-2 px-4 pb-0 justify-center items-center
             transition-all duration-500 ease-in-out z-10`}
                 style={{
-                    position: 'absolute', top: top + 77,
-                    borderBottomLeftRadius: 0, borderBottomRightRadius: 0,
+                    position: 'absolute', top: top + 65,
+                    // borderBottomLeftRadius: 0, borderBottomRightRadius: 0,
                     backgroundColor: dark ? Colors.dark_header : Colors.light_header,
-                    boxShadow: dark ? '0 0px 5px rgba(255,255,255,0.1)' : '0 0px 5px rgba(0,0,0,0.1)',
-                    display: isVisible ? 'flex' : 'none'
+                    boxShadow: dark ? '0 10px 10px rgba(255,255,255,0.1)' : '0 10px 10px rgba(0,0,0,0.1)',
+                    // display: isVisible ? 'flex' : 'none'
                 }}>
                 <Link href="/" asChild>
                     <TouchableOpacity className="w-1/3 h-full flex justify-center items-center"
                         style={{
-                            boxShadow: dark ? '-1px 0px 5px rgba(255,255,255,0.1)' : '-1px 0px 5px rgba(0,0,0,0.1)',
-                            borderBottomWidth: isActive('/') ? 2 : 0,
+                            // boxShadow: dark ? '-1px 0px 5px rgba(255,255,255,0.1)' : '-1px 0px 5px rgba(0,0,0,0.1)',
+                            borderBottomWidth: isActive('/') ? 4 : 0,
                             borderBottomColor: dark ? Colors.logo_light : Colors.logo_dark
                         }}>
                         <Text className="text-2xl"
@@ -77,7 +76,7 @@ export default function Header() {
                 <Link href="/itemList" asChild>
                     <TouchableOpacity className="w-1/3 h-full flex justify-center items-center "
                         style={{
-                            boxShadow: dark ? '0px 0px 5px rgba(255,255,255,0.1)' : '0px 0px 5px rgba(0,0,0,0.1)',
+                            // boxShadow: dark ? '0px 0px 5px rgba(255,255,255,0.1)' : '0px 0px 5px rgba(0,0,0,0.1)',
                             borderBottomWidth: isActive('/itemList') ? 2 : 0,
                             borderBottomColor: dark ? Colors.logo_light : Colors.logo_dark
                         }}>
@@ -92,7 +91,7 @@ export default function Header() {
                 <Link href="/billing" asChild>
                     <TouchableOpacity className="w-1/3 h-full flex justify-center items-center"
                         style={{
-                            boxShadow: dark ? '2px 0px 5px rgba(255,255,255,0.1)' : '2px 0px 5px rgba(0,0,0,0.1)',
+                            // boxShadow: dark ? '2px 0px 5px rgba(255,255,255,0.1)' : '2px 0px 5px rgba(0,0,0,0.1)',
                             borderBottomWidth: isActive('/billing') ? 2 : 0,
                             borderBottomColor: dark ? Colors.logo_light : Colors.logo_dark
                         }}>

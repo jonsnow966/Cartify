@@ -6,7 +6,7 @@ import useTheme from "../hooks/useTheme/useTheme";
 import Colors from "../utilities/Color";
 
 export default function AppContent() {
-    
+
     const { dark } = useTheme();
 
     return (

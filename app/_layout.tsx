@@ -1,12 +1,17 @@
-import '../global.css';
-
 import useLoad from "@/hooks/useLoad/useLoad";
 import React from "react";
-import { Image, Text, View } from "react-native";
+import { Image, LogBox, Text, View } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import '../global.css';
 import ThemeProvider from "../ThemeToggle/ThemeProvider/ThemeProvider";
-
 import Colors from "../utilities/Color";
 import AppContent from "./AppContent";
+
+// Disable Reanimated strict mode warnings
+LogBox.ignoreLogs([
+  '[Reanimated] Reading from `value` during component render',
+  '[Reanimated] Writing to `value` during component render',
+]);
 
 export default function RootLayout() {
   const loading = useLoad();
@@ -20,7 +25,6 @@ export default function RootLayout() {
           backgroundColor: Colors.dark_background
         }}
       >
-
         <Image
           source={image_holder}
           style={{
@@ -41,9 +45,11 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider>
-      <AppContent />
-    </ThemeProvider>
+    <SafeAreaProvider>
+      <ThemeProvider>
+        <AppContent />
+      </ThemeProvider>
+    </SafeAreaProvider>
   )
 }
 
