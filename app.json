@@ -4,7 +4,7 @@
     "slug": "Cartify",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/cartify-icon-dark.svg",
+    "icon": "./assets/images/cartify-foreground.png",
     "scheme": "cartify",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,17 +13,16 @@
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/cartify-icon-dark.svg",
-        "backgroundImage": "./assets/images/cartify-icon-dark.svg",
-        "monochromeImage": "./assets/images/cartify-icon-dark.svg"
+        "foregroundImage": "./assets/images/cartify-foreground.png",
+        "backgroundColor": "#1e072e"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.jonsnow966.Cartify"
     },
     "web": {
       "output": "static",
-      "favicon": "./assets/images/cartify-icon-dark.svg",
+      "favicon": "./assets/images/cartify-foreground.png",
       "bundler": "metro"
     },
     "plugins": [
@@ -31,19 +30,21 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/cartify-icon-dark.svg",
-          "imageWidth": 200,
+          "image": "./assets/images/cartify-foreground.png",
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff",
-          "dark": {
-            "backgroundColor": "#000000"
-          }
+          "backgroundColor": "#1e072e"
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "11b7d4d1-b6e3-4643-908a-05f2d7f9b374"
+      }
     }
   }
 }
