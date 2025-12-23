@@ -4,7 +4,7 @@
     "slug": "Cartify",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/cartify-foreground.png",
+    "icon": "./assets/images/cartify-foreground-light.png",
     "scheme": "cartify",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,8 +13,8 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/cartify-foreground.png",
-        "backgroundColor": "#1e072e"
+        "foregroundImage": "./assets/images/cartify-foreground-light.png",
+        "backgroundColor": "#0a0008"
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
@@ -22,7 +22,7 @@
     },
     "web": {
       "output": "static",
-      "favicon": "./assets/images/cartify-foreground.png",
+      "favicon": "./assets/images/cartify-foreground-light.png",
       "bundler": "metro"
     },
     "plugins": [
@@ -30,9 +30,9 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/cartify-foreground.png",
+          "image": "./assets/images/cartify-splash-light.png",
           "resizeMode": "contain",
-          "backgroundColor": "#1e072e"
+          "backgroundColor": "#0a0008"
         }
       ]
     ],
